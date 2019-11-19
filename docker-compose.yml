@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  memcached:
+    image: memcached
+    ports:
+      - "11211:11211"
+
+  postgresql:
+    image: postgres:12.1
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgresql:/var/lib/postgresql
+
+  feeds_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: '/app/'
+    # well, to keep it running
+    command: tail -f /dev/null
+    volumes:
+      - .:/app
+      - ~/.ssh:/root/.ssh
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgresql
+      - memcached
+    container_name: feeds_backend
+
+volumes:
+  postgresql:
