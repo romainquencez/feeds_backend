@@ -4,6 +4,8 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
+from feed.urls import feeds_urlpatterns
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -16,7 +18,9 @@ schema_view = get_schema_view(
     permission_classes=(permissions.IsAdminUser, )
 )
 
-api_urlspatterns = []
+api_urlspatterns = [
+    path('feeds/', include(feeds_urlpatterns)),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
