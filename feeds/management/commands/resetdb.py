@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
     help = "[DANGER] Reset database and load demo data into database"
-    BASE_FIXTURES = []
+    BASE_FIXTURES = ['languages', 'feeds']
 
     def add_arguments(self, parser):
         parser.add_argument(

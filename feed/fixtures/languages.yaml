@@ -1,0 +1,10 @@
+- model: feed.language
+  pk: 1
+  fields:
+    title: English
+    icon: "\U0001F1FA\U0001F1F8"
+- model: feed.language
+  pk: 2
+  fields:
+    title: "Fran\xE7ais"
+    icon: "\U0001F1EB\U0001F1F7"
