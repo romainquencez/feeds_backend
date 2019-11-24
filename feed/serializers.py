@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from item.serializers import ItemSerializer
+
 from .models import Feed, Language
 
 
@@ -11,7 +13,8 @@ class LanguageSerializer(serializers.ModelSerializer):
 
 
 class FeedSerializer(serializers.ModelSerializer):
+    items = ItemSerializer(many=True, required=True)
 
     class Meta:
         model = Feed
-        fields = ('id', 'title', 'website', 'language')
+        fields = ('id', 'title', 'website', 'language', 'items')
