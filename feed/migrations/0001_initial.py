@@ -9,6 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('category', '0001_initial'),
     ]
 
     operations = [
@@ -28,6 +29,7 @@ class Migration(migrations.Migration):
                 ('feed', models.URLField()),
                 ('website', models.URLField(null=True)),
                 ('language', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='feed.Language')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='category.Category')),
             ],
         ),
     ]

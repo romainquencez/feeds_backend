@@ -5,6 +5,7 @@
     feed: https://www.lemonde.fr/rss/une.xml
     website: https://www.lemonde.fr
     language: 2
+    category: 1
 - model: feed.feed
   pk: 2
   fields:
@@ -12,6 +13,7 @@
     feed: http://rss.liberation.fr/rss/9/
     website: http://rss.liberation.fr
     language: 2
+    category: 1
 - model: feed.feed
   pk: 3
   fields:
@@ -19,6 +21,7 @@
     feed: http://www.lefigaro.fr/rss/figaro_actualites.xml
     website: http://www.lefigaro.fr
     language: 2
+    category: 1
 - model: feed.feed
   pk: 4
   fields:
@@ -26,6 +29,7 @@
     feed: https://www.lepoint.fr/24h-infos/rss.xml
     website: http://www.lepoint.fr
     language: 2
+    category: 1
 - model: feed.feed
   pk: 5
   fields:
@@ -33,6 +37,7 @@
     feed: https://www.bfmtv.com/rss/info/flux-rss/flux-toutes-les-actualites/
     website: https://www.bfmtv.com
     language: 2
+    category: 1
 - model: feed.feed
   pk: 7
   fields:
@@ -40,6 +45,7 @@
     feed: http://www.lequipe.fr/rss/actu_rss.xml
     website: http://www.lequipe.fr
     language: 2
+    category: 2
 - model: feed.feed
   pk: 9
   fields:
@@ -47,6 +53,7 @@
     feed: https://www.sciencesetavenir.fr/rss.xml
     website: https://www.sciencesetavenir.fr
     language: 2
+    category: 3
 - model: feed.feed
   pk: 10
   fields:
@@ -54,6 +61,7 @@
     feed: https://www.lexpress.fr/rss/alaune.xml
     website: https://www.lexpress.fr
     language: 2
+    category: 1
 - model: feed.feed
   pk: 11
   fields:
@@ -61,6 +69,7 @@
     feed: https://www.nextinpact.com/rss/news.xml
     website: https://www.nextinpact.com
     language: 2
+    category: 3
 - model: feed.feed
   pk: 12
   fields:
@@ -68,6 +77,7 @@
     feed: https://www.generation-nt.com/export/rss.xml
     website: https://www.generation-nt.com
     language: 2
+    category: 3
 - model: feed.feed
   pk: 13
   fields:
@@ -75,6 +85,7 @@
     feed: http://www.jeuxvideo.com/rss/rss.xml
     website: http://www.jeuxvideo.com
     language: 2
+    category: 3
 - model: feed.feed
   pk: 14
   fields:
@@ -82,3 +93,4 @@
     feed: https://www.theverge.com/rss/index.xml
     website: https://www.theverge.com
     language: 1
+    category: 3

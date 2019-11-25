@@ -1,5 +1,7 @@
 from django.db import models
 
+from category.models import Category
+
 
 class Language(models.Model):
     title = models.CharField(max_length=150, blank=True)
@@ -14,6 +16,7 @@ class Feed(models.Model):
     feed = models.URLField()
     website = models.URLField(null=True)
     language = models.ForeignKey(Language, on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.title
