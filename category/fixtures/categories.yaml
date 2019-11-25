@@ -1,0 +1,15 @@
+- model: category.category
+  pk: 1
+  fields:
+    title: News
+    icon: "\U0001F5DE\uFE0F"
+- model: category.category
+  pk: 2
+  fields:
+    title: Sports
+    icon: "\u26BD"
+- model: category.category
+  pk: 3
+  fields:
+    title: Technology
+    icon: "\U0001F4BB"

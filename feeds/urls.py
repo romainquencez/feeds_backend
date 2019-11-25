@@ -6,7 +6,7 @@ from rest_framework import permissions
 
 from feed.urls import feeds_urlpatterns
 from item.urls import items_urlpatterns
-
+from category.urls import categories_urlpatterns
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -22,6 +22,7 @@ schema_view = get_schema_view(
 api_urlspatterns = [
     path('feeds/', include(feeds_urlpatterns)),
     path('items/', include(items_urlpatterns)),
+    path('categories/', include(categories_urlpatterns)),
 ]
 
 urlpatterns = [
