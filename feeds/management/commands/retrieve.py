@@ -1,6 +1,7 @@
 from datetime import datetime
 from dateutil import parser
 from django.core.management import base
+from django.utils import timezone
 import feedparser
 
 from feed.models import Feed
@@ -26,11 +27,10 @@ class Command(base.BaseCommand):
                 Item.objects.get(guid=guid)
             except Item.DoesNotExist:
                 # retrieve publication date
-                if entry.get('published') or entry.get('updated'):
-                    publication_date = parser.parse(
-                        entry.get('published') or entry.get('updated'))
-                else:
-                    publication_date = datetime.now()
+                publication_date = parser.parse(
+                    entry.get('published') or
+                    entry.get('created') or
+                    entry.get('updated'))
                 # add Item to bulk create
                 items.append(Item(
                     feed=instance,
@@ -39,6 +39,6 @@ class Command(base.BaseCommand):
                     link=entry.link,
                     guid=guid,
                     publication_date=publication_date,
-                    retrieve_date=datetime.now()))
+                    retrieve_date=timezone.now()))
         # create Items
         Item.objects.bulk_create(items)
